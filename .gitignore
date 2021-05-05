@@ -1,0 +1,5 @@
+#VS Code Directory
+.vscode
+
+#VS Code Workspace
+*.code-workspace
