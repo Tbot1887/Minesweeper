@@ -1,6 +1,4 @@
 -- List of tasks --
-- Move mine count remaining to the bottom in the style of classic minesweeper
-- Add clock to screen (In style of classic minesweeper)
 - Update colour scheme
 - Implement classic minesweeper colours
 - Make Clock Work
@@ -8,7 +6,15 @@
 - Allow user to choose game difficulty
 - Further enhance the UI experience
 
+-- HOTFIXES --
+-Fix issue in commit # b294987
+  - User cannot see if they have won due to removal of msgArea
+
 --- OPT Changes ---
 OPT- Implement save system ??
 
 --- COMPLETE ---
+- Move mine count remaining to the bottom in the style of classic minesweeper
+- Add clock to screen (In style of classic minesweeper)
+
+-- HOTFIXES COMPLETE --
