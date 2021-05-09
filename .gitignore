@@ -3,3 +3,6 @@
 
 #VS Code Workspace
 *.code-workspace
+
+#Backup folder
+.backups
