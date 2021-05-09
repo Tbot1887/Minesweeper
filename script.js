@@ -13,6 +13,7 @@ import { TILE_STATUSES, createBoard, markTile, revealTile, checkWin, checkLose }
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 2;
 
+let body = document.getElementsByTagName('body')[0];
 let board = createBoard(BOARD_SIZE, NUMBER_OF_MINES);
 let boardElement = document.getElementById("gameBoard");
 let minesLeftText = document.querySelector('[data-mine-count]');
@@ -74,7 +75,7 @@ function stopProp(e) {
     e.stopImmediatePropagation();
 }
 
-boardElement.style.setProperty('--size', BOARD_SIZE);
+body.style.setProperty('--size', BOARD_SIZE);
 minesLeftText.textContent = NUMBER_OF_MINES;
 
 //DONE: Populate Board with tiles / mines

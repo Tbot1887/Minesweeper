@@ -10,15 +10,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Material Icons Library -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <link rel="stylesheet" href="Style.css">
   <script src="./script.js" type="module"></script>
   <title>Minesweeper</title>
 </head>
 <body>
   <h3 class="title">Minesweeper</h3>
-  <div id="msgArea" class="subtext">
+  <!-- this is obsolete (Will be removed in a future change)
+    <div id="msgArea" class="subtext">
     Mines Left: <span data-mine-count>NaN</span>
   </div>
+-->
   <div id="gameBoard" class="board"></div>
+  <!-- GameStats -->
+  <div id="gameStats">
+    <div class="timeClock">
+      <span class="material-icons bottom">timer</span>
+      <span class="counter">NaN</span>
+    </div>
+    <div class="minesLeft">
+      <span class="mineCount" data-mine-count></span>
+      <!-- Temporary Icon for design purposes -->
+      <span class="material-icons bottom">timer</span>
+    </div>
+  </div>
 </body>
 </html>
