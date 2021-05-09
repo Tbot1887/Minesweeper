@@ -1,9 +1,14 @@
 -- List of tasks --
 - Move mine count remaining to the bottom in the style of classic minesweeper
 - Add clock to screen (In style of classic minesweeper)
+- Update colour scheme
+- Implement classic minesweeper colours
+- Make Clock Work
 - Create Welcome page
 - Allow user to choose game difficulty
 - Further enhance the UI experience
 
---- ---
+--- OPT Changes ---
 OPT- Implement save system ??
+
+--- COMPLETE ---
