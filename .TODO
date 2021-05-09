@@ -7,8 +7,7 @@
 - Further enhance the UI experience
 
 -- HOTFIXES --
--Fix issue in commit # b294987
-  - User cannot see if they have won due to removal of msgArea
+N/A
 
 --- OPT Changes ---
 OPT- Implement save system ??
@@ -18,3 +17,6 @@ OPT- Implement save system ??
 - Add clock to screen (In style of classic minesweeper)
 
 -- HOTFIXES COMPLETE --
+
+-Fix issue in commit # b294987
+  - User cannot see if they have won due to removal of msgArea
