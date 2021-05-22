@@ -89,6 +89,7 @@ export function revealTile(board, tile) {
         adjacentTiles.forEach(revealTile.bind(null, board))
     }
     else {
+        assignColours(mines.length, tile);
         tile.element.textContent = mines.length;
     }
 }
@@ -131,6 +132,46 @@ export function checkLose(board) {
             return tile.status === TILE_STATUSES.MINE
         })
     })
+}
+
+function assignColours(numMines, tile) {
+    switch(numMines) {
+        case 0: {
+            break;
+        }
+        case 1: {
+            tile.element.classList.add("text-blue");
+            break;
+        }
+        case 2: {
+            tile.element.classList.add("text-green");
+            break;
+        }
+        case 3: {
+            tile.element.classList.add("text-red");
+            break;
+        }
+        case 4: {
+            tile.element.classList.add("text-darkBlue");
+            break;
+        }
+        case 5: {
+            tile.element.classList.add("text-crimson");
+            break;
+        }
+        case 6: {
+            tile.element.classList.add("text-seaGreen");
+            break;
+        }
+        case 7:
+        case 8: {
+            tile.element.classList.add("text-darkerRed");
+            break;
+        }
+        default: {
+            break;
+        }
+    }
 }
 
 function positionMatch(a,b) {

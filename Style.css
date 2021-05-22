@@ -36,7 +36,7 @@ body {
   }
   
   .subtext {
-    color: black;
+    color: #0a0a0a;
     font-weight: bold;
     font-size: 1.5rem;
     margin-bottom: 10px;
@@ -48,7 +48,7 @@ body {
     grid-template-columns: repeat(var(--size), 60px);
     grid-template-rows: repeat(var(--size), 60px);
     gap: 2px;
-    background-color: #777;
+    background-color: #C6CEE5;
     margin-bottom: 15px;
   }
   
@@ -59,13 +59,19 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    border: 2px solid #BBB;
+    border: 2px solid black;
     user-select: none;
   }
   
   .board > [data-status="hidden"] {
-    background-color: #BBB;
+    background-color: #3972BF;
+    background-image: linear-gradient(to bottom right, #B3DEFE, #3972BF);
     cursor: pointer;
+  }
+
+  .board > [data-status="hidden"]:hover {
+    background-color: #A0F6FF;
+    background: linear-gradient(to bottom right, #CEFFFF, #57B1FF);
   }
   
   .board > [data-status="mine"] {
@@ -73,11 +79,40 @@ body {
   }
   
   .board > [data-status="number"] {
-    background-color: none;
+    background-color: inherit;
+    font-weight: bold;
   }
   
   .board > [data-status="marked"] {
     background-color: yellow;
+  }
+
+  .text-blue {
+    color: #414FBC;
+  }
+
+  .text-green {
+    color: #1D6901;
+  }
+
+  .text-red {
+    color: #A60506;
+  }
+
+  .text-darkerRed {
+    color: #AA0404;
+  }
+
+  .text-crimson {
+    color: #790000;
+  }
+
+  .text-seaGreen {
+    color: #047D86;
+  }
+
+  .text-darkBlue {
+    color: #010085;
   }
 
   #gameStats {
