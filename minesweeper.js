@@ -8,6 +8,10 @@
 
 //logic
 
+export let timer = 0;
+
+let gameStartFlag = false;
+
 export const TILE_STATUSES = {
     HIDDEN: 'hidden',
     MINE: 'mine',
@@ -15,6 +19,8 @@ export const TILE_STATUSES = {
     MARKED: 'marked'
 
 }
+
+let interval = setInterval(incrementTimer, 1000);
 
 export function createBoard(boardSize, numberOfMines) {
     //NOTE board is an array of arrays
@@ -67,6 +73,11 @@ export function markTile(tile) {
 }
 
 export function revealTile(board, tile) {
+    
+    if(!gameStartFlag) {
+        gameStartFlag = true;
+    }
+
     let adjacentTiles = null;
 
     if (tile.status !== TILE_STATUSES.MARKED && tile.status !== TILE_STATUSES.HIDDEN) {
@@ -193,4 +204,13 @@ function nearbyTiles(board, {x, y}) {
     }
 
     return tiles;
+}
+
+function incrementTimer() {
+    if(gameStartFlag) {
+        if(timer === 1000)
+            timer = 0;
+        else
+            timer += 1;
+    }
 }

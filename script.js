@@ -8,7 +8,7 @@
 
 //Display
 
-import { TILE_STATUSES, createBoard, markTile, revealTile, checkWin, checkLose } from "./minesweeper.js"
+import { timer, TILE_STATUSES, createBoard, markTile, revealTile, checkWin, checkLose } from "./minesweeper.js"
 
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 2;
@@ -18,6 +18,11 @@ let board = createBoard(BOARD_SIZE, NUMBER_OF_MINES);
 let boardElement = document.getElementById("gameBoard");
 let minesLeftText = document.querySelector('[data-mine-count]');
 let messageArea = document.getElementById("msgArea");
+let timerDisplay = document.querySelector(".counter");
+
+let finalTime = null;
+
+setInterval(displayTimer, 500);
 
 board.forEach(row => {
     row.forEach(tile => {
@@ -47,6 +52,8 @@ function checkGameEnd() {
     let lose = checkLose(board);
 
     if(win || lose) {
+        finalTime = timer;
+        timerDisplay.textContent = finalTime;
         boardElement.addEventListener('click', stopProp, { capture: true })
         boardElement.addEventListener('contextmenu', stopProp, { capture: true })
 
@@ -75,6 +82,13 @@ function stopProp(e) {
     e.stopImmediatePropagation();
 }
 
+function displayTimer() {
+    if(finalTime != null)
+        timerDisplay.textContent = finalTime;
+    else
+        timerDisplay.textContent = timer;
+}
+
 body.style.setProperty('--size', BOARD_SIZE);
 minesLeftText.textContent = NUMBER_OF_MINES;
 
@@ -83,5 +97,5 @@ minesLeftText.textContent = NUMBER_OF_MINES;
 //DONE: Reveal Tiles
 //DONE: Right Click on tiles
 //DONE: Mark Tiles
-//TODO: Check for win/loose
+//DONE: Check for win/loose
 
