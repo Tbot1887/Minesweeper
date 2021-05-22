@@ -80,7 +80,7 @@ export function revealTile(board, tile) {
 
     let adjacentTiles = null;
 
-    if (tile.status !== TILE_STATUSES.MARKED && tile.status !== TILE_STATUSES.HIDDEN) {
+    if (tile.status !== TILE_STATUSES.HIDDEN) {
         return;
     }
 
