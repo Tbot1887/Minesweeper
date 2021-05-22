@@ -11,7 +11,7 @@
 import { timer, TILE_STATUSES, createBoard, markTile, revealTile, checkWin, checkLose } from "./minesweeper.js"
 
 const BOARD_SIZE = 10;
-const NUMBER_OF_MINES = 2;
+const NUMBER_OF_MINES = 10;
 
 let body = document.getElementsByTagName('body')[0];
 let board = createBoard(BOARD_SIZE, NUMBER_OF_MINES);
