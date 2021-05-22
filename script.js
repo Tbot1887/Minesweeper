@@ -44,7 +44,7 @@ function listMinesLeft() {
         return count + row.filter(tile => tile.status === TILE_STATUSES.MARKED).length
     }, 0);
 
-    minesLeftText.textContent = NUMBER_OF_MINES - markedTilesCount;
+    minesLeftText.innerHTML = padNumber(NUMBER_OF_MINES - markedTilesCount);
 }
 
 function checkGameEnd() {
@@ -84,18 +84,27 @@ function stopProp(e) {
 
 function displayTimer() {
     if(finalTime != null)
-        timerDisplay.textContent = finalTime;
+    timerDisplay.innerHTML = padNumber(finalTime);
     else
-        timerDisplay.textContent = timer;
+        timerDisplay.innerHTML = padNumber(timer);
+}
+
+function padNumber(num) {
+    let paddedDisplay;
+
+    let space = `<span class="text-invisible" aria-hidden="true">-</span>`;
+
+    if(num < 10)
+        paddedDisplay = `${num}${space}${space}`
+    else if(num < 100 || num < 0)
+        paddedDisplay = `${num}${space}`
+    else
+        paddedDisplay = `${num}`;
+
+    return paddedDisplay;
 }
 
 body.style.setProperty('--size', BOARD_SIZE);
-minesLeftText.textContent = NUMBER_OF_MINES;
+minesLeftText.innerHTML = padNumber(NUMBER_OF_MINES);
 
-//DONE: Populate Board with tiles / mines
-//DONE: Left Click on tiles
-//DONE: Reveal Tiles
-//DONE: Right Click on tiles
-//DONE: Mark Tiles
-//DONE: Check for win/loose
 
